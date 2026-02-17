@@ -1,8 +1,8 @@
 // 1. app.js make a connection to the database
 const sqlite3 = require('sqlite3').verbose();
 
-// 2. create a database
-const db = new sqlite3.Database(':memory:');
+// 💡 수정 부분: ':memory:' 대신 진짜 파일인 './music.db'를 생성
+const db = new sqlite3.Database('./music.db');
 
 // . create a tabel
 db.serialize(() => {
